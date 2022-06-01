@@ -25,7 +25,7 @@ with open("client_codes_Spotify.json") as f:
 client_id = str(client_codes["client_id"])
 client_secret = str(client_codes["client_secret"])
 app_token = request_client_token(client_id, client_secret)
-playlist_id_youtube = input("Enter the YouTube id")
+playlist_id_youtube = input("Enter the YouTube id: ")
 attempts = 0
 
 
@@ -33,11 +33,11 @@ attempts = 0
 def get_song_spotify(app_token):
     global attempts
     spotify = Spotify(app_token)
-    playlist_id_spotify = input("Enter the spotify playlist id")
+    playlist_id_spotify = input("Enter the spotify playlist id: ")
     playlist = spotify.playlist_items(playlist_id_spotify, as_tracks=True)
-    print(playlist)
+    #print(playlist)
     playlist = playlist["items"]
-    print(playlist)
+    #print(playlist)
     try:
         i = 0
         songIds = []
